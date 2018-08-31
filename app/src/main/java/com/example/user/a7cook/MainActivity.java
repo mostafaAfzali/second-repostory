@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 SnapHelper snapHelper = new PagerSnapHelper();
                 snapHelper.attachToRecyclerView(bannerRv);
                 //some changes before merge again
+                //some changes after merge
             }
         });
 
