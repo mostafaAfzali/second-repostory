@@ -1,7 +1,7 @@
 package com.example.user.a7cook;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(List<Recipe> response) {
                 RecyclerView recyclerView = findViewById(R.id.rv_main_recipes);
+                recyclerView.setNestedScrollingEnabled(false);
                 recyclerView.setLayoutManager(new StaggeredGridLayoutManager(
                         2, StaggeredGridLayoutManager.VERTICAL
                 ));
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(List<Category> categories) {
                 RecyclerView categoriesRv = findViewById(R.id.rv_main_categories);
+                categoriesRv.setNestedScrollingEnabled(false);
                 categoriesRv.setLayoutManager(new LinearLayoutManager(
                         MainActivity.this, LinearLayoutManager.HORIZONTAL, false
                 ));
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(List<Banner> banners) {
                 RecyclerView bannerRv = findViewById(R.id.rv_main_slider);
+                bannerRv.setNestedScrollingEnabled(false);
                 bannerRv.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
                 bannerRv.setAdapter(new BannerAdapter(banners));
 
